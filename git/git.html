@@ -88,6 +88,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#validation-des-modifications">Validation des modifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-d-un-depot-distant">Utilisation d’un dépôt distant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exclusion-de-fichiers">Exclusion de fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-etiquettes">Les étiquettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-branches">Les branches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rebase">Rebase</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#git-hub">Git Hub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#references">Références</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercices">Exercices</a></li>
@@ -410,6 +415,111 @@ target
 .idea
 *.iml
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="les-etiquettes">
+<h2>Les étiquettes<a class="headerlink" href="#les-etiquettes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est possible de poser une étiquette à un moment de l’évolution des sources
+pour marquer un événement. La plupart du temps, il s’agit de tracer une nouvelle
+version d’une solution logicielle en indiquant la nouvelle version.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag &lt;étiquette&gt;
+</pre></div>
+</div>
+<p>Une étiquette est créée localement. Pour la partager, il faut ensuite pousser
+l’étiquette sur le dépôt distant avec la commande <code class="docutils literal notranslate"><span class="pre">push</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push &lt;remote&gt; &lt;étiquette&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-branches">
+<h2>Les branches<a class="headerlink" href="#les-branches" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une branche permet de gérer une version alternative d’un dépôt. Les branches
+peuvent permettre de maintenir et corriger une version antérieure. Avec <a class="reference external" href="https://git-scm.com">Git</a>,
+les branches sont aussi utilisées pour ajouter des nouvelles fonctionnalités
+dans un logiciel sans impacter immédiatement la version principale du logiciel.</p>
+<p>Par défaut, les fichiers gérés par <a class="reference external" href="https://git-scm.com">Git</a> sont attachés à la branche <strong>master</strong>.
+Pour créer une branche :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch &lt;nom de la branche&gt;
+</pre></div>
+</div>
+<p>Une branche a pour point de départ la dernière modification commitée sur la branche
+courante.</p>
+<p>On peut ensuite naviguer de branche en branche avec la commande <code class="docutils literal notranslate"><span class="pre">checkout</span></code> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout &lt;nom de la branche&gt;
+</pre></div>
+</div>
+<p>Toutes les modifications faites et commitées sur une branche ne sont visibles
+que sur cette branche.</p>
+<p>Pour lister les branches :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch
+</pre></div>
+</div>
+<p>Pour rapatrier tous les commits d’une branche vers la branche qui a servi de
+point de départ :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout &lt;nom de la branche origine&gt;
+git branch &lt;nom de la branche à rapatrier&gt;
+</pre></div>
+</div>
+<p>Pour détruire une branche :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -d &lt;nom de la branche&gt;
+</pre></div>
+</div>
+<p>Pour pousser une branche sur le dépôt distant, il suffit d’utiliser la commande
+<code class="docutils literal notranslate"><span class="pre">push</span></code> en précisant le nom de la branche distante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push &lt;remote&gt; &lt;nom de la branche&gt;
+</pre></div>
+</div>
+<p>Pour supprimer une branche sur le dépôt distant, il faut également utiliser
+la commande <code class="docutils literal notranslate"><span class="pre">push</span></code> en ajoutant <code class="docutils literal notranslate"><span class="pre">:</span></code> devant le nom de la branche.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push &lt;remote&gt; :&lt;nom de la branche&gt;
+</pre></div>
+</div>
+<div class="section" id="rebase">
+<h3>Rebase<a class="headerlink" href="#rebase" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il est possible de déplacer l’origine d’une branche avec la commande <code class="docutils literal notranslate"><span class="pre">rebase</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git rebase &lt;nom de la branche qui va servir de point de départ&gt;
+</pre></div>
+</div>
+<p><a class="reference external" href="https://git-scm.com">Git</a> permet de suivre un modèle de développement par <em>feature branch</em>. Lorsqu’un
+développeur veut ajouter une nouvelle fonctionnalité, il peut démarrer une
+nouvelle branche (la plupart du temps depuis la branche <code class="docutils literal notranslate"><span class="pre">master</span></code> mise à jour).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout master
+git pull
+git branch mabranche
+git checkout mabranche
+</pre></div>
+</div>
+<p>Puis le développeur réalise les modifications sur sa branche en commitant autant
+de fois que nécessaire. Une fois le développement terminé, il faut utiliser
+la commande <code class="docutils literal notranslate"><span class="pre">rebase</span></code> pour s’assurer que la branche prend bien en compte
+tous les commits qui auraient pu être ajoutés sur la branche d’origine (dans
+cette exemple la branche <code class="docutils literal notranslate"><span class="pre">master</span></code>).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull
+git rebase master
+</pre></div>
+</div>
+<p>Cette commande peut entraîner des conflits qui seront corrigés sur la branche.
+Cela permet de ne pas avoir de conflit directement sur la branche principale.
+Une fois les conflits résolus (s’il y en a), il suffit de rapatrier les commits
+de la branche sur la branche principale grâce à la commande <code class="docutils literal notranslate"><span class="pre">merge</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout master
+git merge &lt;nom de la branche&gt;
+git push
+</pre></div>
+</div>
+<p>Si la branche n’est plus utile, on peut ensuite la détruire :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -d &lt;nom de la branche&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Il existe également un mode interactif pour la commande <code class="docutils literal notranslate"><span class="pre">rebase</span></code> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git rebase -i &lt;nom de la branche qui va servir de point de départ&gt;
+</pre></div>
+</div>
+<p class="last">Le <code class="docutils literal notranslate"><span class="pre">rebase</span></code> interactif permet de revoir l’intégralité des commits. Il est
+possible de réordonner, de fusionner et même d’enlever des commits.</p>
 </div>
 </div>
 </div>
