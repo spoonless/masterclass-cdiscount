@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ansible &mdash; Documentation Masterclass </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Gestion de conteneurs avec Docker" href="../docker/docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Masterclass
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Recherche dans les pages" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction à Git</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../git/git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#initialisation-d-un-depot">Initialisation d’un dépôt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#suivi-des-modifications-du-depot">Suivi des modifications du dépôt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#validation-des-modifications">Validation des modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#utilisation-d-un-depot-distant">Utilisation d’un dépôt distant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#exclusion-de-fichiers">Exclusion de fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#les-etiquettes">Les étiquettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#les-branches">Les branches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/git.html#rebase">Rebase</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#git-hub">Git Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#references">Références</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#exercices">Exercices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Introduction à docker</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/docker.html">Gestion de conteneurs avec Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#principe-de-docker">Principe de Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#installation-de-docker">Installation de Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#macos">MacOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#windows-10-professionnel">Windows 10 Professionnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#autres-versions-de-windows-ou-macos">Autres versions de Windows ou MacOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#prise-en-main-de-docker">Prise en main de Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#creer-et-lancer-un-conteneur">Créer et lancer un conteneur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#gerer-les-images">Gérer les images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker/docker.html#gerer-les-conteneurs">Gérer les conteneurs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#lancer-un-serveur-web-depuis-docker">Lancer un serveur Web depuis Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#exercice">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#monter-des-repertoires-dans-un-conteneur">Monter des répertoires dans un conteneur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#id1">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#creer-une-image">Créer une image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#id2">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#deploiement-d-une-image-sur-docker-hub">Déploiement d’une image sur Docker Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html#creation-d-une-chaine-de-compilation">Création d’une chaîne de compilation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Introduction à Ansible</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-d-un-inventaire">Création d’un inventaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution-de-ansible">Exécution de Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercices">Exercices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ecriture-de-playbooks">Écriture de playbooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution-d-un-playbook">Exécution d’un playbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Exercices</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Masterclass</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Accueil</a> &raquo;</li>
+        
+      <li>Ansible</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+      
+        <a href="../docker/docker.html" class="btn btn-neutral" title="Gestion de conteneurs avec Docker" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ansible">
+<h1>Ansible<a class="headerlink" href="#ansible" title="Lien permanent vers ce titre">¶</a></h1>
+<p><a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> est un outil d’automatisation pour la maintenance de systèmes et le
+déploiement d’applications.</p>
+<p><a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> permet de définir une liste de machines en les associant à des
+groupes. L’ensemble de ces groupes est appelé un inventaire
+(<em>inventory</em>). Il est ensuite possible de réaliser des <em>tâches</em> sur un
+ou plusieurs groupes (et donc une ou plusieurs machines) en faisant
+appel à des <em>modules</em>. Pour chaque module, <a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> établit une connexion
+SSH machine par machine et vérifie si des commandes doivent être
+exécutées selon l’état de la machine et, le cas échéant, les exécute.</p>
+<p>Il est possible de regrouper un ensemble de tâches dans un
+<strong>playbook</strong> qui va définir l’état d’un groupe de machines. Lorsqu’on
+exécute un <em>playbook</em>, <a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> ne va effectuer que les actions
+nécessaires pour rendre la machine conforme au <em>playbook</em>.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> est écrit en Python et est disponible dans les dépôts Linux. Pour
+un système type Debian, vous pouvez utiliser <em>apt</em> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt install ansible
+</pre></div>
+</div>
+<p>Si vous utilisez un système Ubuntu, vous devez également installer le
+paquet <strong>sshpass</strong> pour pouvoir vous connecter aux machines virtuelles
+qui vous créerez dans votre système :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt install sshpass
+</pre></div>
+</div>
+<p>Si vous avez l’habitude d’utiliser l’écosystème Python alors vous pouvez
+utiliser un environnement virtualisé Python 3 et ensuite installer
+<a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a> à partir du gestionnaire python <em>pip</em> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv venv
+$ <span class="nb">source</span> venv/bin/activate
+$ pip install ansible
+</pre></div>
+</div>
+<p>Pour plus d’informations sur l’installation, vous pouvez vous reporter à
+la <a class="reference external" href="http://docs.ansible.com/ansible/intro_installation.html">documentation</a>.</p>
+</div>
+<div class="section" id="creation-d-un-inventaire">
+<h2>Création d’un inventaire<a class="headerlink" href="#creation-d-un-inventaire" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un <a class="reference external" href="http://docs.ansible.com/ansible/intro_inventory.html">inventaire</a>
+(<em>inventory</em>) est un catalogue des noms ou adresses de machines (aussi
+appelées <em>nœuds</em> ou <em>hosts</em>) décrivant une infrastructure.</p>
+<p>Par défaut, l’inventaire se trouve dans le fichier <code class="docutils literal notranslate"><span class="pre">/etc/ansible/hosts</span></code> pour
+une machine *NIX. Il est également possible de préciser à <a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a>
+d’utiliser un inventaire particulier, ce qui évite de modifier le
+fichier système, notamment pour les phases de test.</p>
+<p>Le fichier d’inventaire suit le format de fichier <strong>INI</strong> :</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Format général d’un inventaire</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[NOM_GROUPE]</span>
+<span class="na">ma-machine</span>
+<span class="na">ma-machine2</span>
+
+<span class="k">[NOM_GROUPE2]</span>
+<span class="na">autre-machine</span>
+<span class="na">autre-machine2</span>
+</pre></div>
+</div>
+</div>
+<p>Il est possible de définir un groupe comme étant un ensemble d’autres
+groupes grâce à la syntaxe <code class="docutils literal notranslate"><span class="pre">[NOM_GROUPE:children]</span></code>. Ce groupe ne
+contient alors que des noms d’autres groupes de l’inventaire.</p>
+<p>Si les machines sont numérotées, vous pouvez utiliser une syntaxe
+abrégée de la forme <code class="docutils literal notranslate"><span class="pre">racine&lt;01&gt;:&lt;09&gt;</span></code> pour éviter de lister une
+machine par ligne.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Exemple d’un inventaire</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[web]</span>
+<span class="na">web01:04</span>
+<span class="na">dmz.web01:05</span>
+
+<span class="k">[sql]</span>
+<span class="na">mysql01:02</span>
+
+<span class="k">[supervisor]</span>
+<span class="na">192.10.0.32</span>
+
+<span class="k">[backup:children]</span>
+<span class="na">web</span>
+<span class="na">sql</span>
+</pre></div>
+</div>
+</div>
+<p>Il existe un groupe implicite : <em>all</em>. Ce groupe désigne l’ensemble des
+machines décrites dans l’inventaire.</p>
+<p>Les machines présentes dans l’inventaire doivent être administrables par
+<a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a>. Pour cela, il faut que chaque machine soit accessible <em>via</em> SSH
+et qu’une version de Python &gt;=2.7 y soit installée. De plus, pour
+administrer correctement la machine, il est probablement nécessaire que
+le compte utilisateur pour la connexion SSH puisse obtenir des
+privilèges d’exécution (par exemple avec la commande <code class="docutils literal notranslate"><span class="pre">sudo</span></code>).</p>
+</div>
+<div class="section" id="execution-de-ansible">
+<h2>Exécution de Ansible<a class="headerlink" href="#execution-de-ansible" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez exécuter <code class="docutils literal notranslate"><span class="pre">ansible</span></code> avec les paramètres suivants :</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-i <var>&lt;fichier inventaire&gt;</var></span></kbd></dt>
+<dd><p>spécifie le fichier d’inventaire à utiliser.</p>
+</dd>
+<dt><kbd><span class="option">-C</span>, <span class="option">--check</span></kbd></dt>
+<dd><p>ne fait aucun changement. Ansible va se contenter de deviner les
+modifications qui devraient être réalisées sur les machines.</p>
+</dd>
+<dt><kbd><span class="option">-m <var>&lt;nom du module&gt;</var></span></kbd></dt>
+<dd><p>spécifie le module que l’on souhaite invoquer.</p>
+</dd>
+<dt><kbd><span class="option">-a <var>&lt;arguments&gt;</var></span></kbd></dt>
+<dd><p>spécifie les arguments à passer au module au moment de l’exécution.</p>
+</dd>
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>demande le mot de passe pour la connexion SSH</p>
+</dd>
+<dt><kbd><span class="option">-u <var>&lt;utilisateur&gt;</var></span></kbd></dt>
+<dd><p>spécifie le login utilisateur pour la connexion SSH</p>
+</dd>
+<dt><kbd><span class="option">-b</span>, <span class="option">--become</span></kbd></dt>
+<dd><p>exécute les commandes distantes en tant que super-utilisateur</p>
+</dd>
+<dt><kbd><span class="option">-K</span></kbd></dt>
+<dd><p>demande le mot de passe pour les opérations demandant des privilèges
+(principalement lors de l’exécution d’une commande <code class="docutils literal notranslate"><span class="pre">sudo</span></code> sur la
+machine distante)</p>
+</dd>
+</dl>
+<p>Vous pouvez par exemple tester votre inventaire en utilisant le module
+<code class="docutils literal notranslate"><span class="pre">ping</span></code> pour vous assurer que vous pouvez joindre toutes les machines
+de votre inventaire :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ansible -k -i &lt;fichier inventaire&gt; &lt;groupe&gt; -m ping
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice admonition">
+<p class="admonition-title">Création d’un machine avec LXC</p>
+<dl class="simple">
+<dt>Objectif</dt><dd><p>Disposer d’un conteneur LXC de référence administrable avec Ansible</p>
+</dd>
+</dl>
+<p>Écrivez un script de création de machine à partir des instructions ci-dessous
+pour pouvoir créer des machines administrables avec <a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a>. La variable
+<code class="docutils literal notranslate"><span class="pre">CONTAINER_NAME</span></code> contiendra la nom de la machine à créer.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Commandes pour LXC/LXD</span><a class="headerlink" href="#id5" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ lxc launch images:debian/stretch/amd64 <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span>
+$ lxc <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span> -- apt update
+$ lxc <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span> -- apt -y upgrade
+$ lxc <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span> -- apt -y install openssh-server sudo python
+$ lxc <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span> -- adduser <span class="nv">$USER</span>
+$ lxc <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$CONTAINER_NAME</span><span class="s2">&quot;</span> -- usermod -a -G sudo <span class="nv">$USER</span>
+</pre></div>
+</div>
+</div>
+<p>Il est fortement recommandé de faire un <em>snapshot</em> de l’état de ce
+conteneur et de travailler ensuite sur des copies afin de conserver une
+machine de référence pour tous les exercices.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Première utilisation d’Ansible</p>
+<dl class="simple">
+<dt>Objectif</dt><dd><p>comprendre le fonctionnement d’Ansible</p>
+</dd>
+</dl>
+<p>Créez deux conteneurs à partir de celui créé à l’exercice précédent.
+Créez un inventaire Ansible en mettant chaque machine dans un groupe
+différent (par exemple groupe1 et groupe2).</p>
+<p>Exécutez ensuite <code class="docutils literal notranslate"><span class="pre">ansible</span></code> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ansible -k -i &lt;fichier inventaire&gt; groupe1 -m ping
+$ ansible -k -i &lt;fichier inventaire&gt; groupe2 -m ping
+$ ansible -k -i &lt;fichier inventaire&gt; all -m ping
+</pre></div>
+</div>
+<p>Essayez ensuite d’utiliser le module <code class="docutils literal notranslate"><span class="pre">raw</span></code> qui permet d’exécuter
+n’importe quelle commande sur les machines distantes :</p>
+<p>Exemple d’utilisation du module <code class="docutils literal notranslate"><span class="pre">raw</span></code> pour exécuter la commande date</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ansible -k -i &lt;fichier inventaire&gt; &lt;groupe&gt; -m raw -a <span class="s2">&quot;date&quot;</span>
+</pre></div>
+</div>
+<p>Utilisez le module <code class="docutils literal notranslate"><span class="pre">raw</span></code> pour exécuter des commandes nécessitant des
+privilèges comme <code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">update</span></code>.</p>
+</div>
+</div>
+<div class="section" id="ecriture-de-playbooks">
+<h2>Écriture de playbooks<a class="headerlink" href="#ecriture-de-playbooks" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un <a class="reference external" href="http://docs.ansible.com/ansible/playbooks.html">playbook</a> est
+à la fois un format de fichier et une arborescence de fichiers
+permettant de définir l’état d’une infrastructure de machines. Avec les
+<em>playbooks</em>, nous avons à notre disposition un outil qui nous permet de
+gérer notre <a class="reference external" href="https://en.wikipedia.org/wiki/Infrastructure_as_Code">infrastructure comme du
+code</a> :
+c’est-à-dire que la gestion des machines se fait à partir de fichiers
+semblables à du code source applicatif. Il devient donc possible
+d’utiliser des gestionnaires de source comme Git pour conserver,
+partager et versionner notre infrastructure mais également d’imaginer
+des procédures automatisées de test et de déploiement non seulement des
+applicatifs mais également des machines.</p>
+<p>Dans son sens le plus strict, un <em>playbook</em> est un fichier au format
+<a class="reference external" href="https://fr.wikipedia.org/wiki/YAML">YAML</a>.</p>
+<p>Par convention, les fichiers YAML ont pour extension <em>yml</em>.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Exemple de fichier playbook</span><a class="headerlink" href="#id7" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checks apache2 is present</span>
+      <span class="nt">package</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=apache2 state=present</span>
+</pre></div>
+</div>
+</div>
+<p>Un fichier <em>playbook</em> peut posséder les sections suivantes :</p>
+<dl class="simple">
+<dt>hosts</dt><dd><p>Le nom de groupe de l’inventaire pour lequel s’applique le <em>playbook</em></p>
+</dd>
+<dt>vars</dt><dd><p>Une liste de variables qui peuvent être utilisées dans le corps du
+<em>playbook</em> en utilisant la notation Jinja2 <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">nom_variable</span> <span class="pre">}}</span></code></p>
+</dd>
+<dt>remote_user</dt><dd><p>Le login de l’utilisateur distant utilisé pour réaliser les tâches</p>
+</dd>
+<dt>tasks</dt><dd><p>La liste des tâches à réaliser si nécessaire</p>
+</dd>
+<dt>handlers</dt><dd><p>La liste des actions qui pourront être exécutées lors d’une
+notification</p>
+</dd>
+</dl>
+<p>Dans les sections <code class="docutils literal notranslate"><span class="pre">tasks</span></code> et <code class="docutils literal notranslate"><span class="pre">handlers</span></code>, on trouve la déclaration
+des modules avec leurs arguments. Pour chacun, on utilisera soit la
+notation :</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;description de la tâche&gt;</span>
+  <span class="nt">&lt;module&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;arg1&gt;=&lt;valeur1&gt; &lt;arg2&gt;=&lt;valeur2&gt;...</span>
+</pre></div>
+</div>
+<p>soit la notation plus longue :</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;description de la tâche&gt;</span>
+  <span class="nt">&lt;module&gt;</span><span class="p">:</span>
+    <span class="nt">&lt;arg1&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;valeur1&gt;</span>
+    <span class="nt">&lt;arg2&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;valeur2&gt;</span>
+    <span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>Il existe de nombreux modules disponibles pour <a class="reference external" href="http://docs.ansible.com/ansible/index.html">Ansible</a>. Vous pouvez
+consulter la liste dans la <a class="reference external" href="http://docs.ansible.com/ansible/modules_by_category.html">documentation
+officielle</a>.</p>
+<p>Les <em>handlers</em> permettent de définir des modules qui ne seront appelés
+que si certaines tâches sont exécutées. On ajoute l’attribut <code class="docutils literal notranslate"><span class="pre">notify</span></code> à
+une tâche pour indiquer que si la tâche est exécutée alors le <em>handler</em>
+doit aussi l’être</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Exemple d’utilisation d’un handler</span><a class="headerlink" href="#id8" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+
+  <span class="nt">handlers</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">reload apache2 service</span>
+      <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=apache2 state=reloaded enabled=yes</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checks apache2 is present</span>
+      <span class="nt">package</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=apache2 state=present</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checks apache2 modules enabled</span>
+      <span class="nt">apache2_module</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=ssl state=present</span>
+      <span class="nt">notify</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">reload apache2 service</span>
+</pre></div>
+</div>
+</div>
+<p>L’exemple ci-dessus vérifie que le serveur Web Apache est installé et
+que le module ssl est activé pour ce serveur. Si ce n’est pas le cas,
+alors ansible installera la module puis notifiera le <em>handler</em> <code class="docutils literal notranslate"><span class="pre">reload</span>
+<span class="pre">apache2</span> <span class="pre">service</span></code>. Ce dernier effectuera une <em>reload</em> de la configuration
+du serveur. Les <em>handlers</em> sont donc une façon simple de définir des
+tâches conditionnelles.</p>
+</div>
+<div class="section" id="execution-d-un-playbook">
+<h2>Exécution d’un playbook<a class="headerlink" href="#execution-d-un-playbook" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez exécuter <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span></code> avec les paramètres suivants :</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-i <var>&lt;fichier inventaire&gt;</var></span></kbd></dt>
+<dd><p>spécifie le fichier d’inventaire à utiliser.</p>
+</dd>
+<dt><kbd><span class="option">-C</span>, <span class="option">--check</span></kbd></dt>
+<dd><p>ne fait aucun changement. Ansible va se contenter de deviner les
+modifications qui devraient être réalisées sur les machines.</p>
+</dd>
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>demande le mot de passe pour la connexion SSH</p>
+</dd>
+<dt><kbd><span class="option">-u <var>&lt;utilisateur&gt;</var></span></kbd></dt>
+<dd><p>spécifie le login utilisateur pour la connexion SSH</p>
+</dd>
+<dt><kbd><span class="option">-b</span>, <span class="option">--become</span></kbd></dt>
+<dd><p>exécute les commandes distantes en tant que super-utilisateur</p>
+</dd>
+<dt><kbd><span class="option">-K</span></kbd></dt>
+<dd><p>demande le mot de passe pour les opérations demandant des privilèges
+(principalement lors de l’exécution d’une commande <code class="docutils literal notranslate"><span class="pre">sudo</span></code> sur la
+machine distante)</p>
+</dd>
+</dl>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Exemple d’exécution d’un playbook</span><a class="headerlink" href="#id9" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ansible-playbook -i &lt;inventaire&gt; -k -K -b monplaybook.yml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Exercices<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice admonition">
+<p class="admonition-title">Un premier playbook</p>
+<dl class="simple">
+<dt>Objectif</dt><dd><p>utiliser <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span></code></p>
+</dd>
+</dl>
+<p>Exécuter le <em>playbook</em> suivant sur un conteneur LXC :</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+
+  <span class="nt">handlers</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">reload apache2 service</span>
+      <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=apache2 state=reloaded enabled=yes</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checks apache2 is present</span>
+      <span class="nt">package</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=apache2 state=present</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checks apache2 modules enabled</span>
+      <span class="nt">apache2_module</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name=ssl state=present</span>
+      <span class="nt">notify</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">reload apache2 service</span>
+</pre></div>
+</div>
+<p>Vérifier que le serveur HTTP est bien disponible.</p>
+<p>Relancez le même <em>playbook</em> pour voir ce qu’il se passe…</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Hébergement du cours</p>
+<dl class="simple">
+<dt>Objectif</dt><dd><p>Utiliser <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span></code> pour monter un serveur Web qui héberge
+ce cours.</p>
+</dd>
+</dl>
+<p>Une archive du site est téléchargeable à <a class="reference external" href="https://github.com/spoonless/masterclass-cdiscount/archive/gh-pages.zip">cette
+adresse</a>.
+Mais ce site est également <a class="reference external" href="https://github.com/spoonless/masterclass-cdiscount">un dépôt
+GitHub</a>
+sur la branche <strong>gh-pages</strong>.</p>
+<p>Pour cet exercice, vous aurez besoin de consulter <a class="reference external" href="http://docs.ansible.com/ansible/modules_by_category.html">la liste des modules
+Ansible</a>
+pour sélectionner ceux qui vous permettront de réaliser les tâches
+nécessaires.</p>
+<p>Testez votre <em>playbook</em> avec un conteneur LXC.</p>
+<p>Sauvegardez votre projet dans un dépôt GitHub !</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../docker/docker.html" class="btn btn-neutral float-left" title="Gestion de conteneurs avec Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright David Gayerie - david.gayerie at epsi.fr - CC-BY-SA
+
+    </p>
+  </div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/masterclass-cdiscount/archive/gh-pages.zip">HTML</a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
